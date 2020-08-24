@@ -1,0 +1,2 @@
+1- update connection to your db and FROMEMAIL var in config.php file in the root.
+2- import db.sql in your DB.

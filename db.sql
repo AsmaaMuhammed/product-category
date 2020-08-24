@@ -1,0 +1,24 @@
+
+CREATE TABLE `users`(
+    `id` INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `username` VARCHAR(255) UNIQUE NOT NULL,
+    `email` VARCHAR(255) UNIQUE NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    `profile_picture` VARCHAR(255) DEFAULT NULL,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL DEFAULT '0',
+  `category` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `profile_picture` VARCHAR(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
